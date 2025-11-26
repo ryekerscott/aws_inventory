@@ -1,2 +1,4 @@
-*.xlsx
+*pycache*
 *.json
+*.xlsx
+cmdb*

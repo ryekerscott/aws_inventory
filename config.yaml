@@ -1,0 +1,36 @@
+environments:
+  ssle:
+    name: "NAME"
+    skip_iam: false
+    skip_r53: false
+    credentials:
+      access: "ACCESS"
+      secret: "SECRET"
+      region: "REGION"
+contents:
+  ec2: true
+  emr: true
+  rds: true
+  workspaces: true
+  route53: true
+  acm: true
+  dynamodb: true
+  s3: true
+  elb: true
+  opensearch: true
+  apigw: true
+  ebs: true
+  lambda: true
+  iam: true
+  efs: true
+  eks: true
+  vpc: true
+  sqs: true
+  sns: true
+  cloudwatch: true
+output:
+  upload: true
+  prefix: "INVENTORY"
+  bucket_env: "ENV"
+  bucket_name: "NAME"
+  bucket_path: "/"
