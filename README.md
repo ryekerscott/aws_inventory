@@ -41,43 +41,64 @@ A CLI tool written in Go that generates a comprehensive inventory of AWS resourc
 
 ## Configuration
 
-Copy and edit `config.yaml`:
+Copy and edit `config.yaml`. The configuration has three top-level sections:
+
+**`environments`** — one entry per AWS account:
 
 ```yaml
 environments:
-  my-account:
-    name: "My Account"
+  my-account-a:
+    name: "Account A"
+    skip_iam: false     # skip IAM inventory for this account
+    skip_r53: false     # skip Route 53 inventory for this account
     credentials:
-      access: "MY_ACCESS_KEY_ENV_VAR"   # name of the env var holding the access key
-      secret: "MY_SECRET_KEY_ENV_VAR"   # name of the env var holding the secret key
+      access: "ACCOUNT_A_ACCESS_KEY"    # name of the env var holding the access key
+      secret: "ACCOUNT_A_SECRET_KEY"    # name of the env var holding the secret key
     region: "us-east-1"
-    contents:
-      ec2: true
-      emr: false
-      rds: true
-      workspaces: false
-      route53: true
-      acm: true
-      dynamodb: true
-      s3: true
-      elb: true
-      opensearch: false
-      apigw: true
-      ebs: true
-      lambda: true
-      iam: true
-      efs: false
-      eks: true
-      vpc: true
-      sqs: true
-      sns: true
-      cloudwatch: true
+  my-account-b:
+    name: "Account B"
+    skip_iam: true
+    skip_r53: false
+    credentials:
+      access: "ACCOUNT_B_ACCESS_KEY"
+      secret: "ACCOUNT_B_SECRET_KEY"
+    region: "us-west-2"
+```
 
+**`contents`** — global toggle for which services to inventory (applies across all accounts):
+
+```yaml
+contents:
+  ec2: true
+  emr: true
+  rds: true
+  workspaces: true
+  route53: true
+  acm: true
+  dynamodb: true
+  s3: true
+  elb: true
+  opensearch: true
+  apigw: true
+  ebs: true
+  lambda: true
+  iam: true
+  efs: true
+  eks: true
+  vpc: true
+  sqs: true
+  sns: true
+  cloudwatch: true
+```
+
+**`output`** — controls where the Excel file is saved:
+
+```yaml
 output:
   upload: false         # set to true to upload output to S3
   prefix: "INVENTORY"  # output filename prefix
-  bucket_env: "my-account"
-  bucket_name: "my-bucket"
+  bucket_env: "ENV"     # environment key to use for the S3 upload
+  bucket_name: "NAME"
   bucket_path: "/"
 ```
 
