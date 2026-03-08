@@ -1,4 +1,4 @@
-module repo.com/path/inventory
+module github.com/ryekerscott/aws_inventory
 
 go 1.23.6
 
