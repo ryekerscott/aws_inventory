@@ -9,7 +9,7 @@ import (
 	"github.com/aws/aws-sdk-go-v2/credentials"
 	"github.com/aws/aws-sdk-go-v2/service/ec2"
 	"github.com/aws/aws-sdk-go-v2/service/ec2/types"
-	ltypes "repo.com/path/inventory/types"
+	ltypes "github.com/ryekerscott/aws_inventory/types"
 )
 
 func amiInfo(client ec2.Client, amiId string) map[string]string {

@@ -13,7 +13,7 @@ import (
 	cwTypes "github.com/aws/aws-sdk-go-v2/service/cloudwatch/types"
 	"github.com/aws/aws-sdk-go-v2/service/s3"
 	"github.com/aws/aws-sdk-go-v2/service/s3/types"
-	ltypes "repo.com/path/inventory/types"
+	ltypes "github.com/ryekerscott/aws_inventory/types"
 )
 
 func getBucketSize(bucket string, cw_client cloudwatch.Client) string {

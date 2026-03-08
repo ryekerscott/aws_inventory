@@ -9,7 +9,7 @@ import (
 	"github.com/aws/aws-sdk-go-v2/credentials"
 	"github.com/aws/aws-sdk-go-v2/service/iam"
 	"github.com/aws/aws-sdk-go-v2/service/iam/types"
-	ltypes "repo.com/path/inventory/types"
+	ltypes "github.com/ryekerscott/aws_inventory/types"
 )
 
 func getGroupData(data []types.Group, iam_client iam.Client, account string) [][]string {

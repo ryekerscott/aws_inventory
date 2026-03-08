@@ -14,7 +14,7 @@ import (
 	"github.com/aws/aws-sdk-go-v2/service/rds"
 	"github.com/aws/aws-sdk-go-v2/service/rds/types"
 	rdstypes "github.com/aws/aws-sdk-go-v2/service/rds/types"
-	ltypes "repo.com/path/inventory/types"
+	ltypes "github.com/ryekerscott/aws_inventory/types"
 )
 
 func processTags(instance rdstypes.DBInstance) map[string]string {

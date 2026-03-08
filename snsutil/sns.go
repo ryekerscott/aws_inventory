@@ -10,7 +10,7 @@ import (
 	"github.com/aws/aws-sdk-go-v2/credentials"
 	"github.com/aws/aws-sdk-go-v2/service/sns"
 	"github.com/aws/aws-sdk-go-v2/service/sns/types"
-	ltypes "repo.com/path/inventory/types"
+	ltypes "github.com/ryekerscott/aws_inventory/types"
 )
 
 func getTopicData(data []types.Topic, sns_client sns.Client, account string, region string) [][]string {

@@ -11,7 +11,7 @@ import (
 	"github.com/aws/aws-sdk-go-v2/service/acm"
 	es "github.com/aws/aws-sdk-go-v2/service/elasticsearchservice"
 	"github.com/aws/aws-sdk-go-v2/service/elasticsearchservice/types"
-	ltypes "repo.com/path/inventory/types"
+	ltypes "github.com/ryekerscott/aws_inventory/types"
 )
 
 func getCustomEndpointArn(certArn string, acm_client acm.Client) string {
