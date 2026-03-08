@@ -1,5 +1,5 @@
 environments:
-  ssle:
+  AWS_ACCOUNT:
     name: "NAME"
     skip_iam: false
     skip_r53: false
